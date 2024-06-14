@@ -13,6 +13,11 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
+      (function () {
+        emailjs.init("-Mx4RZlW2OaO_e7tv");
+      });
+    </script>
   </head>
   <body class="is-preload">
     <!-- Header -->
@@ -27,8 +32,8 @@
           >Resume</a
         >
         <br />
-        and released for free under the
-        <a href="http://html5up.net/license">Creative Commons license</a>.
+        <!-- and released for free under the -->
+        <!-- <a href="http://html5up.net/license">Creative Commons license</a>. -->
       </p>
     </div>
 
@@ -52,7 +57,7 @@
         <section class="feature left">
           <a
             href="https://cocktailssearch.onrender.com/"
-            class="image icon solid fa-signal"
+            class="image icon solid fa-code"
             ><img src="images/CCportfolio.png" alt=""
           /></a>
           <div class="content">
@@ -85,7 +90,7 @@
         <section class="feature left">
           <a
             href="https://api-project-h2wd.onrender.com/"
-            class="image icon solid fa-mobile-alt"
+            class="image icon solid fa-code"
             ><img src="images/erabnbportfolio.png" alt=""
           /></a>
           <div class="content">
@@ -269,19 +274,20 @@
           vivamus.
         </p>
 
-        <form method="post" action="#">
+        <form method="post" action="#" id="email-form">
           <div class="row">
             <div class="col-6 col-12-mobilep">
-              <input type="text" name="name" placeholder="Name" />
+              <input type="text" name="name" placeholder="Name" id="name" />
             </div>
             <div class="col-6 col-12-mobilep">
-              <input type="email" name="email" placeholder="Email" />
+              <input type="email" name="email" placeholder="Email" id="email" />
             </div>
             <div class="col-12">
               <textarea
                 name="message"
                 placeholder="Message"
                 rows="6"
+                id="message"
               ></textarea>
             </div>
             <div class="col-12">
