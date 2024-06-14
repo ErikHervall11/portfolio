@@ -162,6 +162,33 @@ textarea {
 
 /* Basic */
 
+/* Initial state */
+body.is-preload {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Loaded state */
+body.is-preload-loaded {
+  opacity: 1;
+}
+
+/* Page reveal animation */
+@keyframes pageReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.is-preload-loaded {
+  animation: pageReveal 1s ease-in-out;
+}
+
 html {
   box-sizing: border-box;
 }

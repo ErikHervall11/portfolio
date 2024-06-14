@@ -2,9 +2,9 @@
 
     <style type="text/css"><![CDATA[
 		line { stroke-width: 2.5px; }
-		line.upper { stroke: rgba(224,224,224,0.75); }
-		line.lower { stroke: rgba(224,224,224,0.75); }
-		polygon.one { fill: #f8f8f8; }
+		line.upper { stroke: rgba(117, 117, 117, 0.75); }
+		line.lower { stroke: rgba(117, 117, 117, 0.75); }
+		polygon.one { fill: rgba(117, 117, 117, 0.75); }
 		polygon.two { fill: #ffffff; }
     ]]></style>	
     
