@@ -2829,6 +2829,10 @@ input[type="button"].small,
   padding-top: 0;
 }
 
+.header-div a {
+  font-size: 25px;
+}
+
 /* Header */
 
 #header {

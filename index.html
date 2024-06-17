@@ -23,7 +23,7 @@
           const text = element.textContent;
           element.textContent = "";
           let i = 0;
-          const typingSpeed = 150; // Adjust typing speed here (ms per character)
+          const typingSpeed = 120; // Adjust typing speed here (ms per character)
 
           function typeWriter() {
             if (i < text.length) {
@@ -44,17 +44,18 @@
     <div id="header">
       <span class="logo icon fa-paper-plane"></span>
       <h1 class="typewriter-text">Erik Hervall</h1>
-      <p class="typewriter-text">
-        Here is my
+      <div class="header-div">
+        <p class="typewriter-text">Here is my</p>
         <a
           href="https://cocktail-collective.s3.us-west-1.amazonaws.com/MyResume.pdf"
           target="_blank"
+          class="typewriter-text"
           >Resume</a
         >
-        <br />
-        <!-- and released for free under the -->
-        <!-- <a href="http://html5up.net/license">Creative Commons license</a>. -->
-      </p>
+      </div>
+      <br />
+      <!-- and released for free under the -->
+      <!-- <a href="http://html5up.net/license">Creative Commons license</a>. -->
     </div>
 
     <!-- Main -->
