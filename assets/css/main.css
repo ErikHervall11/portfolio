@@ -2076,6 +2076,11 @@ blockquote {
   }
 }
 
+.intro {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 /* Section/Article */
 
 section.special,
