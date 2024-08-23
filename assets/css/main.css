@@ -162,6 +162,12 @@ textarea {
 
 /* Basic */
 
+.intro {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 15px;
+}
+
 /* Initial state */
 body.is-preload {
   opacity: 0;
@@ -646,8 +652,9 @@ blockquote {
     align-items: stretch;
   }
   .intro {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 15px;
   }
 
   .row > * {
@@ -3132,8 +3139,8 @@ input[type="button"].small,
   /* Basic */
 
   .intro {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   body,
@@ -3179,8 +3186,8 @@ input[type="button"].small,
   /* Basic */
 
   .intro {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   body,
