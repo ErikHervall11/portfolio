@@ -167,11 +167,11 @@ textarea {
 }
 
 .iframe-container {
-  border-radius: 20px;
+  /* border-radius: 20px; */
   margin-top: -350px;
   position: relative;
   width: 100%;
-  padding-bottom: 60.25%; /* Aspect ratio */
+  padding-bottom: 67.25%; /* Aspect ratio */
   height: 0;
   overflow: hidden;
 }
