@@ -267,7 +267,7 @@ a {
     border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  border-bottom: dotted 1px;
+  /* border-bottom: dotted 1px; */
   color: #4eb980;
   text-decoration: none;
 }
@@ -2913,7 +2913,40 @@ input[type="button"].small,
 }
 
 .header-div a {
-  font-size: 25px;
+  font-size: 35px;
+  padding: 3px 7px;
+  border: white 1px solid;
+  border-radius: 15px;
+  text-decoration: none;
+  background: linear-gradient(
+    90deg,
+    rgb(120, 243, 120),
+    #0a0,
+    rgb(120, 243, 120)
+  );
+  background-size: 400% 400%;
+  animation: shimmer 3s ease infinite;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.header-div a:hover {
+  background-color: white;
+  color: green;
+  border-color: green;
+  box-shadow: 0px 0px 5px 5px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Header */
@@ -2953,14 +2986,14 @@ input[type="button"].small,
 }
 
 #header a {
-  border-bottom-color: rgba(117, 117, 117, 0.75);
+  /* border-bottom-color: rgba(117, 117, 117, 0.75); */
   color: rgba(255, 255, 255, 0.8);
 }
 
-#header a:hover {
+/* #header a:hover {
   border-bottom-color: transparent;
   color: #4eb980;
-}
+} */
 
 #header strong,
 #header b {
