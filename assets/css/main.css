@@ -2921,13 +2921,13 @@ input[type="button"].small,
   background: linear-gradient(
     90deg,
     rgb(120, 243, 120),
-    #0a0,
+    rgb(0, 143, 0),
     rgb(120, 243, 120)
   );
   background-size: 400% 400%;
-  animation: shimmer 3s ease infinite;
+  animation: shimmer 4s ease infinite;
   color: white;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .header-div a:hover {
