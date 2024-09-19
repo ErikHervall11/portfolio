@@ -2904,6 +2904,18 @@ input[type="button"].small,
   top: 0;
 }
 
+.waitdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: -30px;
+}
+
+.imgqr {
+  width: 40%;
+}
+
 .feature.right .content {
   padding-left: 0;
 }
