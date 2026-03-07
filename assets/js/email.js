@@ -1,38 +1,66 @@
-/*
-	Directive by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+(() => {
+  const PUBLIC_KEY = "-Mx4RZlW2OaO_e7tv";
+  const SERVICE_ID = "service_ddqquj7";
+  const TEMPLATE_ID = "template_m9cdb1k";
 
-(function ($) {
-  emailjs.init("-Mx4RZlW2OaO_e7tv");
+  const form = document.getElementById("email-form");
+  const status = document.getElementById("res");
 
-  document
-    .getElementById("email-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+  if (!form || !status) {
+    return;
+  }
 
-      emailjs
-        .send("service_ddqquj7", "template_m9cdb1k", {
-          name: name,
-          email: email,
-          message: message,
-        })
-        .then(
-          function (response) {
-            document.getElementById("res").innerText =
-              "Thanks For Reaching Out!";
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("message").value = "";
-          },
+  const setStatus = (text, isError = false) => {
+    status.textContent = text;
+    status.style.color = isError ? "#ff9aa2" : "#3fffd5";
+  };
 
-          function (error) {
-            document.getElementById("res").innerText = JSON.stringify(error);
-          }
-        );
-    });
-})(jQuery);
+  const hasEmailJs = typeof window.emailjs !== "undefined";
+
+  if (hasEmailJs) {
+    window.emailjs.init(PUBLIC_KEY);
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const name = String(document.getElementById("name")?.value || "").trim();
+    const email = String(document.getElementById("email")?.value || "").trim();
+    const message = String(document.getElementById("message")?.value || "").trim();
+
+    if (!name || !email || !message) {
+      setStatus("Please fill out all fields before sending.", true);
+      return;
+    }
+
+    if (!hasEmailJs) {
+      setStatus("Email service unavailable right now. Message me on LinkedIn.", true);
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    try {
+      await window.emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        name,
+        email,
+        message,
+      });
+
+      setStatus("Thanks for reaching out. I will get back to you soon.");
+      form.reset();
+    } catch (error) {
+      setStatus("Message failed to send. Please try again in a moment.", true);
+      console.error("EmailJS error:", error);
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+      }
+    }
+  });
+})();
