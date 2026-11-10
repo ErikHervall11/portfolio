@@ -5,328 +5,334 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Erik Hervall - Unreal Engine 5 gameplay developer focused on DreamWorld Sandbox MMO, C++, Blueprints, and large-scale performance optimization."
+      content="Erik Hervall makes games. Unreal Engine gameplay developer working in C++ and Blueprints, currently building GunParty."
     />
-    <title>Erik Hervall | Game Developer Portfolio</title>
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <meta property="og:title" content="Erik Hervall | Game Developer" />
+    <meta
+      property="og:description"
+      content="Unreal Engine gameplay developer. Currently building GunParty, a party rogue-lite FPS."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0a0f1f" />
+    <title>Erik Hervall | Game Developer</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='7' width='20' height='19' rx='8' fill='%233fffd5' stroke='%23071320' stroke-width='2'/%3E%3Ccircle cx='12' cy='15' r='3.4' fill='%23fff'/%3E%3Ccircle cx='20' cy='15' r='3.4' fill='%23fff'/%3E%3Ccircle cx='13' cy='15.5' r='1.6' fill='%23071320'/%3E%3Ccircle cx='21' cy='15.5' r='1.6' fill='%23071320'/%3E%3Crect x='10' y='26' width='4' height='4' fill='%23071320'/%3E%3Crect x='18' y='26' width='4' height='4' fill='%23071320'/%3E%3Ccircle cx='16' cy='4' r='2.4' fill='%23ffd166'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap"
+    />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script defer src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/chase.js"></script>
     <script defer src="assets/js/email.js"></script>
   </head>
   <body>
-    <div class="scroll-progress" aria-hidden="true">
+    <canvas id="chase-canvas" class="chase-canvas" aria-hidden="true"></canvas>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="scroll-progress" aria-hidden="true" data-page-region>
       <span class="scroll-progress__bar"></span>
     </div>
 
-    <div class="bg-orbs" aria-hidden="true"></div>
-
-    <header class="site-header" id="top">
-      <a class="brand" href="#top">EH//DEV</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+    <header class="site-header" data-page-region>
+      <a class="brand" href="#top">EH<span>//</span>DEV</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="site-nav" id="site-nav">
+      <nav class="site-nav" id="site-nav" aria-label="Sections">
+        <a href="#gunparty">GunParty</a>
+        <a href="#ragtime">Ragtime</a>
+        <a href="#arcade">Arcade</a>
         <a href="#dreamworld">DreamWorld</a>
-        <a href="#projects">Projects</a>
-        <a href="#prototypes">Prototypes</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero section">
-        <div class="hero__content" data-reveal>
-          <p class="eyebrow">Unreal Engine 5 Gameplay Developer</p>
-          <h1>Building DreamWorld: Open-World MMO Systems, Performance, and Player Experience</h1>
+    <main id="main" data-page-region>
+      <section class="hero" id="top">
+        <div class="hero__content">
+          <p class="eyebrow"><span class="blink">&#9654;</span> Player 1</p>
+          <h1>
+            Erik Hervall
+            <span class="hero__accent">makes games.</span>
+          </h1>
           <p class="hero__blurb">
-            I work on DreamWorld Sandbox MMO, contributing to gameplay systems,
-            building mechanics, onboarding flow, and performance optimization in a
-            large UE5 networked codebase. Current milestone is a strong Steam Early
-            Access launch on March 10, 2026.
+            Unreal Engine gameplay developer. C++, Blueprints, multiplayer
+            systems, and a soft spot for games that are a little bit ridiculous.
+            Right now I'm building <a href="#gunparty">GunParty</a>.
           </p>
           <div class="hero__actions">
-            <a
-              class="button button--primary"
-              href="https://store.steampowered.com/app/3103280/DreamWorld_Sandbox_MMO/"
-              target="_blank"
-              rel="noreferrer"
-              >DreamWorld on Steam</a
-            >
-            <a
-              class="button button--ghost"
-              href="images/Erik_Resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              >Open Resume</a
-            >
+            <a class="button button--primary" href="#gunparty">What I'm building</a>
+            <a class="button" href="#ragtime">Featured game: Ragtime</a>
           </div>
-        </div>
-
-        <div class="hero__panel" data-reveal data-delay="0.15">
-          <div class="status-grid">
-            <article class="status-card">
-              <p class="status-card__label">Role Focus</p>
-              <p class="status-card__value">UE5 Gameplay + Systems</p>
-            </article>
-            <article class="status-card">
-              <p class="status-card__label">Stack</p>
-              <p class="status-card__value">C++, Unreal Engine 5, Blueprints</p>
-            </article>
-            <article class="status-card">
-              <p class="status-card__label">Current Goal</p>
-              <p class="status-card__value">Launch DreamWorld Early Access on March 10, 2026</p>
-            </article>
+          <div class="hero__hint">
+            <p>
+              <span class="hint-hover"
+                >Psst. Something back there is chasing your cursor. Hold still
+                and let it win.</span
+              >
+              <span class="hint-touch"
+                >Psst. Something back there is running around. Tap anywhere and
+                it'll come for your finger.</span
+              >
+            </p>
+            <button class="link-button" type="button" data-chase-focus aria-pressed="false">
+              <span data-label data-off="Watch the chase" data-on="Back to the site">Watch the chase</span>
+              &rarr;
+            </button>
           </div>
-          <div class="scanline"></div>
         </div>
       </section>
 
-      <section class="section section--compact" aria-label="Highlights">
-        <div class="stat-row">
-          <article class="stat" data-reveal>
-            <p class="stat__value">UE5</p>
-            <p class="stat__label">Large-scale open-world development</p>
+      <section class="section" id="gunparty">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">01 // Now building</p>
+          <h2>GunParty</h2>
+        </div>
+
+        <article class="panel gp" data-reveal>
+          <div class="gp__main">
+            <p class="gp__logo" aria-hidden="true">GUN<span>PARTY</span></p>
+            <p class="lead">A 2&ndash;6 player online party rogue-lite FPS.</p>
+            <p>
+              Party-game minigame rounds wrapped around a co-op rogue-lite
+              overworld. Squad up, push through a themed map, grab upgrades
+              along the way, then get pulled into a short minigame arena with
+              its own rules. Then do it again, further down the road.
+            </p>
+            <p>
+              It's what I'm working on now, and it's still deep in development,
+              so there's nothing to show yet. Clips from the build will land
+              here when there are some.
+            </p>
+          </div>
+
+          <dl class="stat-sheet">
+            <div>
+              <dt>Genre</dt>
+              <dd>Party rogue-lite FPS</dd>
+            </div>
+            <div>
+              <dt>Players</dt>
+              <dd>2&ndash;6, online</dd>
+            </div>
+            <div>
+              <dt>Engine</dt>
+              <dd>Unreal Engine 5</dd>
+            </div>
+            <div>
+              <dt>Under the hood</dt>
+              <dd>C++ gameplay core</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd><span class="pulse-dot"></span>In development</dd>
+            </div>
+          </dl>
+
+          <div class="worlds">
+            <p class="micro">World select</p>
+            <ul>
+              <li style="--c: var(--blue)">Castle</li>
+              <li style="--c: var(--purple)">Space</li>
+              <li style="--c: var(--yellow)">Western</li>
+              <li style="--c: var(--pink)">Fantasy Cave</li>
+              <li style="--c: var(--teal)">Pirate Island</li>
+            </ul>
+          </div>
+
+          <div class="no-signal" role="img" aria-label="No footage yet">
+            <p class="no-signal__title">No signal</p>
+            <p>Footage coming soon</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="ragtime">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">02 // Featured game</p>
+          <h2>Ragtime</h2>
+        </div>
+
+        <article class="panel panel--featured ragtime" data-reveal>
+          <div class="marquee" aria-hidden="true">
+            <p class="marquee__label">Now showing</p>
+            <p class="marquee__title">RAGTIME</p>
+            <p class="marquee__label">Built in Unreal Engine</p>
+          </div>
+          <div class="ragtime__body">
+            <p class="lead">My most in-depth project so far, built in Unreal Engine.</p>
+            <!-- TODO: replace with a few sentences on what Ragtime is and what you built for it. -->
+            <p>
+              A proper write-up and a downloadable build are on the way. The
+              full game is too big to run in a browser, so it will live on
+              itch.io as a download.
+            </p>
+            <!-- TODO: once the build is on itch.io, swap this for
+                 <a class="button button--gold" href="https://YOURNAME.itch.io/ragtime" target="_blank" rel="noreferrer">Download on itch.io</a> -->
+            <span class="button button--gold is-disabled" aria-disabled="true">Download on itch.io &middot; coming soon</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="arcade">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">03 // Arcade corner</p>
+          <h2>Small, silly games</h2>
+          <p>
+            Tiny prototypes hosted on itch.io. They won't win any awards, but
+            they run right here in your browser.
+          </p>
+        </div>
+
+        <div class="cabinet-grid">
+          <article class="panel cabinet" data-reveal>
+            <h3>Prototype One</h3>
+            <div
+              class="cabinet__screen"
+              data-embed="https://itch.io/embed-upload/11305888?color=1f1f1f"
+              data-title="Prototype One"
+            >
+              <button class="coin-button" type="button">Insert coin</button>
+            </div>
           </article>
-          <article class="stat" data-reveal data-delay="0.1">
-            <p class="stat__value">C++</p>
-            <p class="stat__label">Core gameplay systems and framework work</p>
-          </article>
-          <article class="stat" data-reveal data-delay="0.2">
-            <p class="stat__value">Perf</p>
-            <p class="stat__label">GPU/CPU profiling and scalability tuning</p>
+
+          <article class="panel cabinet" data-reveal>
+            <h3>Prototype Two</h3>
+            <div
+              class="cabinet__screen"
+              data-embed="https://itch.io/embed-upload/11334895?color=1f1f1f"
+              data-title="Prototype Two"
+            >
+              <button class="coin-button" type="button">Insert coin</button>
+            </div>
           </article>
         </div>
       </section>
 
       <section class="section" id="dreamworld">
         <div class="section-heading" data-reveal>
-          <p class="eyebrow">Current Focus</p>
-          <h2>DreamWorld Sandbox MMO</h2>
-          <p>
-            Contributing to an infinite open-world sandbox MMORPG, currently in alpha
-            testing and preparing for Steam Early Access on March 10, 2026.
-          </p>
+          <p class="eyebrow">04 // Previous quest</p>
+          <h2>DreamWorld</h2>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card project-card--featured" data-reveal data-unlock>
-            <div class="project-card__media">
-              <video src="images/compresseddwtrailer.mp4" poster="images/header.jpg" controls muted playsinline preload="metadata"></video>
-            </div>
-            <div class="project-card__content">
-              <h3>DreamWorld Sandbox MMO (UE5)</h3>
-              <p class="meta-line">Steam Early Access target date: March 10, 2026</p>
-              <p>
-                I contribute across gameplay, systems, and optimization in a large
-                multiplayer C++/Blueprint codebase, with a focus on shippable features
-                and runtime stability for large open worlds.
-              </p>
-              <p>
-                <a class="inline-link" href="https://store.steampowered.com/app/3103280/DreamWorld_Sandbox_MMO/" target="_blank" rel="noreferrer">Open DreamWorld on Steam</a>
-              </p>
-              <ul class="feature-list">
-                <li>Implemented and expanded gameplay systems for building, interactions, inventory, and asset manipulation.</li>
-                <li>Built onboarding/tutorial and UI flows with Widget Blueprints to improve player retention and clarity.</li>
-                <li>Performed GPU/CPU profiling with UE tooling and RenderDoc to identify and remove bottlenecks.</li>
-                <li>Optimized scalability and rendering paths: cvars, texture/material tuning, Nanite, foliage, and streaming.</li>
-                <li>Supported world generation/streaming work and contributed to Steam Early Access release readiness.</li>
-              </ul>
-              <ul class="tags">
-                <li>Unreal Engine 5</li>
-                <li>C++</li>
-                <li>Blueprints</li>
-                <li>Networking</li>
-                <li>Performance</li>
-              </ul>
-              <ul class="tags">
-                <li>RenderDoc</li>
-                <li>Scalability</li>
-                <li>Optimization</li>
-                <li>Open World</li>
-                <li>MMORPG</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Additional Work</p>
-          <h2>Other Projects</h2>
-          <p>
-            Selected application projects and experiments that strengthened my product,
-            architecture, and delivery skills.
-          </p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card" data-reveal data-unlock>
-            <a href="https://cocktailssearch.onrender.com/" target="_blank" rel="noreferrer">
-              <img src="images/CCportfolio.png" alt="Cocktail Collective app screenshot" />
-            </a>
-            <div class="project-card__content">
-              <h3>Cocktail Collective</h3>
-              <p>
-                Flask + React Redux platform for exploring and sharing cocktail recipes
-                with user-centric browsing and profile features.
-              </p>
-              <ul class="tags">
-                <li>Flask</li>
-                <li>React Redux</li>
-                <li>PostgreSQL</li>
-              </ul>
-            </div>
+        <div class="split">
+          <article class="panel" data-reveal>
+            <p class="lead">An infinite open-world sandbox MMO, built in Unreal Engine 5.</p>
+            <p>
+              DreamWorld set out to be one enormous shared world: an MMORPG
+              with no edge to the map, where building, inventory and world
+              interaction all had to hold up across a networked sandbox.
+            </p>
+            <p>
+              I worked on it as a gameplay developer. The project has since
+              gone into hibernation, but it's where I learned the most about
+              what it takes to build a game at that scale.
+            </p>
+            <p>
+              <a
+                class="inline-link"
+                href="https://store.steampowered.com/app/3103280/DreamWorld_Sandbox_MMO/"
+                target="_blank"
+                rel="noreferrer"
+                >DreamWorld on Steam &nearr;</a
+              >
+            </p>
           </article>
 
-          <article class="project-card" data-reveal data-unlock data-delay="0.1">
-            <a href="https://bggclubb.onrender.com/" target="_blank" rel="noreferrer">
-              <img src="images/BGGC.jpg" alt="BG Golf Club app screenshot" />
-            </a>
-            <div class="project-card__content">
-              <h3>BG Golf Club</h3>
-              <p>
-                Score-tracking app for golfers with round history, best scores, and
-                game stats for competitive improvement.
-              </p>
-              <ul class="tags">
-                <li>Python</li>
-                <li>Flask</li>
-                <li>React Vite</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card" data-reveal data-unlock data-delay="0.2">
-            <a href="https://beatrate.onrender.com/" target="_blank" rel="noreferrer">
-              <img src="images/beatrateportfolio.png" alt="BeatRate app screenshot" />
-            </a>
-            <div class="project-card__content">
-              <h3>BeatRate</h3>
-              <p>
-                Music discovery and review experience where users can track albums,
-                rate releases, and publish opinions with clean UI flow.
-              </p>
-              <ul class="tags">
-                <li>Flask</li>
-                <li>React Redux</li>
-                <li>REST APIs</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card" data-reveal data-unlock>
-            <a href="https://api-project-h2wd.onrender.com/" target="_blank" rel="noreferrer">
-              <img src="images/erabnbportfolio.png" alt="erabnb app screenshot" />
-            </a>
-            <div class="project-card__content">
-              <h3>erabnb</h3>
-              <p>
-                Express + React booking platform with a time-travel twist,
-                demonstrating custom domain modeling and full CRUD workflows.
-              </p>
-              <ul class="tags">
-                <li>Express</li>
-                <li>Node.js</li>
-                <li>React</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card" data-reveal data-unlock data-delay="0.1">
-            <a href="https://cocktail-collective.s3.us-west-1.amazonaws.com/waitqr.jpg" target="_blank" rel="noreferrer">
-              <img src="images/resizewait.png" alt="Wait, I know this trivia app preview" />
-            </a>
-            <div class="project-card__content">
-              <h3>Wait, I Know This</h3>
-              <p>
-                React Native trivia app currently in development with Expo deployment
-                for quick testing and iterative gameplay tuning.
-              </p>
-              <ul class="tags">
-                <li>React Native</li>
-                <li>Expo</li>
-                <li>Mobile UX</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="prototypes">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Playable Builds</p>
-          <h2>Additional Prototypes</h2>
-          <p>Embedded itch.io builds that show iteration, mechanics exploration, and implementation pace.</p>
-        </div>
-
-        <div class="prototype-grid">
-          <article class="proto-card" data-reveal>
-            <h3>Prototype One</h3>
-            <div class="iframe-shell">
-              <iframe
-                title="Prototype One"
-                frameborder="0"
-                src="https://itch.io/embed-upload/11305888?color=1f1f1f"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </article>
-
-          <article class="proto-card" data-reveal data-delay="0.1">
-            <h3>Prototype Two</h3>
-            <div class="iframe-shell">
-              <iframe
-                title="Prototype Two"
-                frameborder="0"
-                src="https://itch.io/embed-upload/11334895?color=1f1f1f"
-                allowfullscreen
-              ></iframe>
-            </div>
+          <article class="panel" data-reveal>
+            <h3 class="micro micro--gold">XP gained</h3>
+            <ul class="xp-list">
+              <li>
+                <strong>Gameplay systems</strong>
+                Building, world interactions, inventory and asset placement in a
+                large multiplayer C++ and Blueprint codebase.
+              </li>
+              <li>
+                <strong>UI and onboarding</strong>
+                Menus, tutorial flow and player feedback built with Widget
+                Blueprints.
+              </li>
+              <li>
+                <strong>Profiling</strong>
+                Hunting GPU and CPU bottlenecks with Unreal's tools and
+                RenderDoc.
+              </li>
+              <li>
+                <strong>Scalability</strong>
+                Tuning cvars, shadows, LODs, Nanite, foliage and texture
+                streaming.
+              </li>
+              <li>
+                <strong>Huge worlds</strong>
+                World generation and streaming for an open world with no fixed
+                size.
+              </li>
+              <li>
+                <strong>Listening to players</strong>
+                Using playtests and community feedback to decide what to fix
+                next.
+              </li>
+            </ul>
           </article>
         </div>
       </section>
 
       <section class="section" id="about">
         <div class="section-heading" data-reveal>
-          <p class="eyebrow">Developer Profile</p>
-          <h2>About Erik</h2>
+          <p class="eyebrow">05 // Player profile</p>
+          <h2>About</h2>
         </div>
 
-        <div class="about-layout">
-          <article class="about-card" data-reveal>
+        <div class="split">
+          <article class="panel" data-reveal>
+            <p class="lead">I'm Erik. I make games, mostly in Unreal Engine 5.</p>
             <p>
-              I work in Unreal Engine 5 as part of DreamWorld development,
-              contributing gameplay systems, feature implementation, and
-              optimization work across a large multiplayer codebase.
+              I like gameplay systems, multiplayer problems and performance
+              work, and I like making things that are fun to mess around with.
+              This site is one of them.
             </p>
             <p>
-              I actively use community feedback and playtesting signals to improve
-              player experience, onboarding flow, and feature quality.
+              Before games I built full-stack web apps: Flask and Express back
+              ends, React front ends, PostgreSQL, and a React Native mobile
+              app. That background still comes in handy for tools, UI and data.
             </p>
           </article>
 
-          <article class="about-card" data-reveal data-delay="0.1">
-            <h3>DreamWorld Contributions</h3>
-            <ul class="checklist">
-              <li>Core gameplay systems: building, world interactions, inventory, and asset placement</li>
-              <li>UI systems with Widget Blueprints for menus, interfaces, and player feedback loops</li>
-              <li>Tutorial and onboarding implementation to improve new-player retention</li>
-              <li>Feature development in existing engine systems and gameplay frameworks</li>
+          <article class="panel" data-reveal>
+            <h3 class="micro micro--gold">Loadout</h3>
+            <ul class="tags">
+              <li>Unreal Engine 5</li>
+              <li>C++</li>
+              <li>Blueprints</li>
+              <li>Multiplayer</li>
+              <li>Gameplay systems</li>
+              <li>Widget Blueprints</li>
+              <li>Profiling</li>
+              <li>RenderDoc</li>
+              <li>Optimization</li>
             </ul>
-          </article>
-
-          <article class="about-card" data-reveal data-delay="0.2">
-            <h3>Performance and Tech Focus</h3>
-            <ul class="checklist">
-              <li>GPU/CPU profiling and bottleneck analysis using Unreal tools and RenderDoc</li>
-              <li>Graphics scalability tuning with cvars, shadows, LOD, Nanite, and texture streaming controls</li>
-              <li>Texture/material optimization, asset streaming, and runtime rendering stability improvements</li>
-              <li>Current goal: continue DreamWorld development and drive strong Early Access success</li>
+            <h3 class="micro">Earlier save file</h3>
+            <ul class="tags tags--dim">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Express</li>
+              <li>PostgreSQL</li>
+              <li>React Native</li>
             </ul>
           </article>
         </div>
@@ -334,56 +340,93 @@
 
       <section class="section" id="contact">
         <div class="section-heading" data-reveal>
-          <p class="eyebrow">Start A New Mission</p>
-          <h2>Contact</h2>
-          <p>If you are hiring for UE5 gameplay, systems, or performance-focused game development, reach out.</p>
+          <p class="eyebrow">06 // Co-op</p>
+          <h2>Say hi</h2>
+          <p>Want to talk games, Unreal, or what the little guy in the background is up to? Send a message.</p>
         </div>
 
-        <div class="contact-layout">
-          <form id="email-form" class="contact-form" data-reveal>
+        <div class="split split--contact">
+          <form id="email-form" class="panel contact-form" data-reveal>
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required />
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
 
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
 
             <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="6"
-              placeholder="Tell me about your project or role"
-              required
-            ></textarea>
+            <textarea id="message" name="message" rows="6" placeholder="What's up?" required></textarea>
 
             <button type="submit" class="button button--primary">Send Message</button>
             <p id="res" class="form-status" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="contact-panel" data-reveal data-delay="0.1">
-            <a class="panel-link" href="images/Erik_Resume.pdf" target="_blank" rel="noreferrer">
-              <span class="icon solid fa-file"></span>
-              Resume
-            </a>
-            <a class="panel-link" href="https://github.com/ErikHervall11" target="_blank" rel="noreferrer">
-              <span class="icon brands fa-github"></span>
+          <aside class="contact-links" data-reveal>
+            <a class="panel link-tile" href="https://github.com/ErikHervall11" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.500 11.500 0 0 1 6 0c2.300-1.500 3.300-1.200 3.300-1.200.600 1.700.200 2.900.100 3.200.800.800 1.200 1.900 1.200 3.200 0 4.600-2.800 5.600-5.500 5.900.400.400.800 1.100.800 2.200v3.300c0 .300.200.700.800.600A12 12 0 0 0 12 .500z"
+                />
+              </svg>
               GitHub
             </a>
-            <a class="panel-link" href="https://www.linkedin.com/in/erikhervall/" target="_blank" rel="noreferrer">
-              <span class="icon brands fa-linkedin"></span>
+            <a class="panel link-tile" href="https://www.linkedin.com/in/erikhervall/" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.4 20.400h-3.500v-5.600c0-1.300 0-3-1.900-3s-2.100 1.400-2.100 2.900v5.700H9.400V9h3.400v1.600c.500-.900 1.600-1.900 3.400-1.900 3.600 0 4.300 2.400 4.300 5.500v6.200zM5.300 7.400a2.100 2.100 0 1 1 0-4.100 2.100 2.100 0 0 1 0 4.100zM7.100 20.400H3.600V9h3.500v11.400zM22.200 0H1.800C.800 0 0 .800 0 1.700v20.600c0 .900.800 1.700 1.800 1.700h20.400c1 0 1.800-.800 1.800-1.700V1.700c0-.900-.800-1.700-1.800-1.700z"
+                />
+              </svg>
               LinkedIn
             </a>
-            <a class="panel-link" href="https://www.facebook.com/erik.hervall/" target="_blank" rel="noreferrer">
-              <span class="icon brands fa-facebook-f"></span>
+            <a class="panel link-tile" href="https://www.facebook.com/erik.hervall/" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M24 12a12 12 0 1 0-13.900 11.900v-8.400H7.100V12h3V9.400c0-3 1.800-4.700 4.500-4.700 1.300 0 2.700.200 2.700.200v3h-1.500c-1.500 0-2 .900-2 1.900V12h3.400l-.500 3.500h-2.900v8.400A12 12 0 0 0 24 12z"
+                />
+              </svg>
               Facebook
+            </a>
+            <a class="panel link-tile" href="images/Erik_Resume.pdf" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 1h9l5 5v17H6V1zm8 1.800V7h4.200L14 2.800zM9 11v2h8v-2H9zm0 4v2h8v-2H9z" />
+              </svg>
+              Resume
             </a>
           </aside>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>&copy; <span id="year"></span> Erik Hervall. All rights reserved.</p>
+    <footer class="site-footer" data-page-region>
+      <p>&copy; <span id="year"></span> Erik Hervall. Thanks for playing.</p>
     </footer>
+
+    <div class="chase-hud" aria-hidden="true">
+      <p class="chase-hud__score">Catches <span data-chase-catches>000</span></p>
+      <p class="chase-hud__hint">
+        <span class="hint-hover">Move your cursor. Hold still to get caught.</span>
+        <span class="hint-touch">Tap anywhere and it'll come running.</span>
+      </p>
+    </div>
+
+    <div class="chase-ui">
+      <button class="chip-button chase-ui__extra" type="button" data-chase-level>New level</button>
+      <button class="chip-button chase-ui__extra" type="button" data-chase-friend>+ Friend</button>
+      <button
+        class="chip-button chip-button--icon"
+        type="button"
+        data-chase-pause
+        aria-pressed="false"
+        aria-label="Pause the background critter"
+      >
+        <span class="pause-icon" aria-hidden="true"></span>
+      </button>
+      <button class="chip-button chip-button--main" type="button" data-chase-focus aria-pressed="false">
+        <span class="critter-icon" aria-hidden="true"></span>
+        <span data-label data-off="Watch the chase" data-on="Back to the site">Watch the chase</span>
+        <span class="chip-count" aria-hidden="true">&times;<span data-chase-catches>000</span></span>
+      </button>
+    </div>
+
+    <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
   </body>
 </html>
