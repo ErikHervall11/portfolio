@@ -221,6 +221,10 @@ body.is-chase-focus {
   background: var(--yellow);
 }
 
+.button--gold:hover {
+  background: #ffe19a;
+}
+
 .button.is-disabled {
   cursor: default;
   color: var(--yellow);
